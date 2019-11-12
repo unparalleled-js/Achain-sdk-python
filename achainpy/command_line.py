@@ -78,6 +78,10 @@ def cli():
     bin_json.add_argument('--action','-a', type=str, action='store', required=True, dest='action')
     bin_json.add_argument('--binargs','-b', type=str, action='store', required=True, dest='binargs')
     # json2bin
+    json_bin = get_subparsers.add_parser('json2bin')
+    json_bin.add_argument('--code','-c', type=str, action='store', required=True, dest='code')
+    json_bin.add_argument('--action','-a', type=str, action='store', required=True, dest='action')
+    json_bin.add_argument('--jsonargs','-b', type=str, action='store', required=True, dest='jsonargs')
     # create
     create_parser = subparsers.add_parser('create')
     create_subparsers = create_parser.add_subparsers(dest='create')
@@ -196,6 +200,8 @@ def cli():
             console_print(ca.get_actions(args.account, pos=args.pos, offset=args.offset, timeout=args.timeout))
         elif args.get == 'bin2json' :
             console_print(ca.abi_bin_to_json(args.code, args.action, args.binargs, timeout=args.timeout))
+        elif arfs.get == 'json2bin' :
+            console_print(ca.abi_json_to_bin(args.code, args.action, args.jsonargs, timeout=args.timeout))
     # PUSH
     elif args.subparser == 'push':
         if args.push == 'action':
