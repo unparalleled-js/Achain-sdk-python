@@ -75,18 +75,18 @@ python setup.py install
 
 ```
 # Get chain information
-pycleos --url http://127.0.0.1:8888 get info
+pycli --url http://127.0.0.1:8888 get info
 
 # get information about a block
-pycleos --url http://127.0.0.1:8888 get block 100
+pycli --url http://127.0.0.1:8888 get block 100
 
 # Retrieve an account from the blockchain
-pycleos --url http://127.0.0.1:8888 get account --account act
+pycli --url http://127.0.0.1:8888 get account --account act
 
 # Retrieve the code and ABI for an account
-pycleos --url http://127.0.0.1:8888 get code --account act
+pycli --url http://127.0.0.1:8888 get code --account act
 
 # Retrieve the ABI for an account
-pycleos --url http://127.0.0.1:8888 get abi --account act
+pycli --url http://127.0.0.1:8888 get abi --account act
 
 ```
