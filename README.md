@@ -43,11 +43,50 @@ mkdir -p ~/envs/achainpy
 virtualenv ~/envs/achainpy
 # activate the environment
 source ~/envs/achainpy/bin/activate
-# download code
+# clone code
 git clone https://github.com/Achain-Dev/Achain-sdk-python.git
 # install the library
 cd Achain-sdk-python
 [sudo] python setup.py install libachainpy
 
 ```
+### Windows
 
+1. Install python
+   You can use either Python 2.7 or 3.7 however we suggest python 3.7 as we have tested that version more thoroughly.
+   https://www.howtogeek.com/197947/how-to-install-python-on-windows/
+   [Python 2.7](https://www.python.org/downloads/release/python-2715/)
+   [Python 3.7](https://www.python.org/downloads/release/python-370/)
+
+2. Install git
+   https://www.atlassian.com/git/tutorials/install-git
+
+3. Install achainpy
+
+```
+# clone code
+git clone https://github.com/Achain-Dev/Achain-sdk-python.git
+# install the library
+cd Achain-sdk-python
+python setup.py install
+
+```
+## Command line Tool Examples
+
+```
+# Get chain information
+pycleos --url http://127.0.0.1:8888 get info
+
+# get information about a block
+pycleos --url http://127.0.0.1:8888 get block 100
+
+# Retrieve an account from the blockchain
+pycleos --url http://127.0.0.1:8888 get account --account act
+
+# Retrieve the code and ABI for an account
+pycleos --url http://127.0.0.1:8888 get code --account act
+
+# Retrieve the ABI for an account
+pycleos --url http://127.0.0.1:8888 get abi --account act
+
+```
