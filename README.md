@@ -47,7 +47,7 @@ source ~/envs/achainpy/bin/activate
 git clone https://github.com/Achain-Dev/Achain-sdk-python.git
 # install the library
 cd Achain-sdk-python
-[sudo] python setup.py install libachainpy
+[sudo] python setup.py install
 
 ```
 ### Windows
