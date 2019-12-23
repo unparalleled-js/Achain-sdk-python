@@ -254,7 +254,8 @@ class AbiAction(BaseObject):
     def encode(self):
         name = self._encode_buffer(Name(self.name))
         type = self._encode_buffer(self.type)
-        ricardian_contract = self._encode_buffer(self.ricardian_contract)
+        ricardian_contract = ''
+        #self._encode_buffer(self.ricardian_contract)
         return '{}{}{}'.format(name, type, ricardian_contract)
 
 class AbiTable(BaseObject):
