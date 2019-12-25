@@ -131,16 +131,9 @@ class Clachain :
     #####
 
     def set_abi(self, account, permission, abi_file, key, broadcast=True, timeout=30):
-        current_abi = Abi(self.get_abi(account)['abi'])
-        current_sha = sha256(current_abi.get_raw().encode('utf-8'))
         with open(abi_file) as rf:
             abi = json.load(rf)
-            new_abi = Abi(abi) 
-            # hex_abi = hexlify(abi)
-            new_sha = sha256(new_abi.get_raw().encode('utf-8'))
-            if current_sha == new_sha:
-                raise ErrSetSameAbi()
-            # generate trx
+            new_abi = Abi(abi)
             arguments = {
                 "account": account,  
                 "abi": new_abi.get_raw()
@@ -163,16 +156,10 @@ class Clachain :
 
 
     def set_code(self, account, permission, code_file, key, broadcast=True, timeout=30):
-        current_code = self.get_code(account)
-        # print(current_code)
-        # print(type(current_code))
-        current_sha = current_code['code_hash']
         with open(code_file, 'rb') as rf:
             wasm = rf.read()
             hex_wasm = hexlify(wasm)
             new_sha = sha256(hex_wasm)
-            if current_sha == new_sha:
-                raise ErrSetSameCode()
             # generate trx
             arguments = {
                 "account": account,
