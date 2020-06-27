@@ -31,7 +31,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'pycli = achainpy.command_line:cli',
+            'accli = achainpy.command_line:cli',
             'pytest = achainpy.command_line:testachain',
         ],
     })

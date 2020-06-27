@@ -75,18 +75,18 @@ python setup.py install
 
 ```
 # Get chain information
-pycli --url http://127.0.0.1:8888 get info
+accli --url http://127.0.0.1:8888 get info
 
 # get information about a block
-pycli --url http://127.0.0.1:8888 get block 100
+accli --url http://127.0.0.1:8888 get block 100
 
 # Retrieve an account from the blockchain
-pycli --url http://127.0.0.1:8888 get account --account act
+accli --url http://127.0.0.1:8888 get account --account act
 
 # Retrieve the code and ABI for an account
-pycli --url http://127.0.0.1:8888 get code --account act
+accli --url http://127.0.0.1:8888 get code --account act
 
 # Retrieve the ABI for an account
-pycli --url http://127.0.0.1:8888 get abi --account act
+accli --url http://127.0.0.1:8888 get abi --account act
 
 ```
