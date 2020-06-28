@@ -1,0 +1,4 @@
+[console_scripts]
+accli = achainpy.command_line:cli
+pytest = achainpy.command_line:testachain
+

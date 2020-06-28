@@ -200,7 +200,7 @@ def cli():
             console_print(ca.get_actions(args.account, pos=args.pos, offset=args.offset, timeout=args.timeout))
         elif args.get == 'bin2json' :
             console_print(ca.abi_bin_to_json(args.code, args.action, args.binargs, timeout=args.timeout))
-        elif arfs.get == 'json2bin' :
+        elif args.get == 'json2bin' :
             console_print(ca.abi_json_to_bin(args.code, args.action, args.jsonargs, timeout=args.timeout))
     # PUSH
     elif args.subparser == 'push':
